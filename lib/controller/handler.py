@@ -39,6 +39,7 @@ from lib.core.settings import SQLITE_ALIASES
 from lib.core.settings import SYBASE_ALIASES
 from lib.core.settings import VERTICA_ALIASES
 from lib.core.settings import VIRTUOSO_ALIASES
+from lib.core.settings import SPARK_ALIASES
 from lib.utils.sqlalchemy import SQLAlchemy
 
 from plugins.dbms.access.connector import Connector as AccessConn
@@ -97,6 +98,8 @@ from plugins.dbms.vertica.connector import Connector as VerticaConn
 from plugins.dbms.vertica import VerticaMap
 from plugins.dbms.virtuoso.connector import Connector as VirtuosoConn
 from plugins.dbms.virtuoso import VirtuosoMap
+from plugins.dbms.spark.connector import Connector as SparkConn
+from plugins.dbms.spark import SparkMap
 
 def setHandler():
     """
@@ -133,6 +136,7 @@ def setHandler():
         (DBMS.FRONTBASE, FRONTBASE_ALIASES, FrontBaseMap, FrontBaseConn),
         (DBMS.RAIMA, RAIMA_ALIASES, RaimaMap, RaimaConn),
         (DBMS.VIRTUOSO, VIRTUOSO_ALIASES, VirtuosoMap, VirtuosoConn),
+        (DBMS.SPARK, SPARK_ALIASES, SparkMap, SparkConn),
     ]
 
     _ = max(_ if (conf.get("dbms") or Backend.getIdentifiedDbms() or kb.heuristicExtendedDbms or "").lower() in _[1] else () for _ in items)

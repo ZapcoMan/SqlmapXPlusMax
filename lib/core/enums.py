@@ -60,6 +60,7 @@ class DBMS(object):
     FRONTBASE = "FrontBase"
     RAIMA = "Raima Database Manager"
     VIRTUOSO = "Virtuoso"
+    SPARK = "Spark SQL"
 
 class DBMS_DIRECTORY_NAME(object):
     ACCESS = "access"
@@ -90,6 +91,7 @@ class DBMS_DIRECTORY_NAME(object):
     FRONTBASE = "frontbase"
     RAIMA = "raima"
     VIRTUOSO = "virtuoso"
+    SPARK = "spark"
 
 class FORK(object):
     MARIADB = "MariaDB"

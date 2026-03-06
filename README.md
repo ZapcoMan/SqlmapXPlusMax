@@ -3,7 +3,18 @@
 [![License](https://img.shields.io/badge/license-GPLv2-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.x-green.svg)](https://www.python.org/)
 
-> 基于 Sqlmap 的 SQL Server 注入增强工具，专注于 MSSQL 数据库的高级利用场景
+> 基于 SqlmapXPlus 的 SQL Server 注入增强工具，专注于 MSSQL 数据库的高级利用场景
+
+## 项目说明
+
+本项目是基于 [SqlmapXPlus](https://github.com/co01cat/SqlmapXPlus) 进行二次开发的工具，而 SqlmapXPlus 本身又是基于著名的 [sqlmap](https://sqlmap.org) 项目进行的二次开发。
+
+**开发 lineage：**
+```
+sqlmap (原版) → SqlmapXPlus (二次开发) → 本项目 (基于 SqlmapXPlus 的再开发)
+```
+
+感谢 sqlmap 开发团队和 SqlmapXPlus 作者 co01cat 的杰出工作！
 
 ## 目录
 
