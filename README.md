@@ -254,6 +254,6 @@ python sqlmap.py -r request.txt --sharpshell-upload2
 
 ---
 
-**项目地址**: [https://github.com/co01cat/SqlmapXPlus](https://github.com/co01cat/SqlmapXPlus)
+**二次开发项目地址**: [https://github.com/co01cat/SqlmapXPlus](https://github.com/co01cat/SqlmapXPlus)
 
 **作者**: co01cat
