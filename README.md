@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-GPLv2-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.x-green.svg)](https://www.python.org/)
 
-> 基于 SqlmapXPlus 的 SQL Server 注入增强工具，专注于 MSSQL 数据库的高级利用场景
+> 基于 SqlmapXPlus 的 SQL Server 注入增强工具，专注于 MSSQL 数据库的高级利用场景，同时新增 Spark SQL 大数据数据库支持
 
 ## 项目说明
 
@@ -208,6 +208,14 @@ python sqlmap.py -r request.txt --sharpshell-upload2
 
 ## 更新日志
 
+### 2025-03-06
+- ✅ 新增 Spark SQL 数据库支持
+  - 支持数据库指纹识别
+  - 支持数据库、表、列枚举
+  - 支持数据提取（盲注和联合查询）
+  - 支持用户枚举
+  - ⚠️ **注意**：Spark SQL 功能未经过实战检验，谨慎使用，可能会有问题
+
 ### 2025-01-21
 - ✅ 更新工具交互方式
 - ✅ 优化 CLR 注入利用方式
@@ -231,6 +239,14 @@ python sqlmap.py -r request.txt --sharpshell-upload2
    - 部分功能需要开启 xp_cmdshell 或 OLE Automation
 
 5. **网络环境**：DLL 传输过程中可能出现数据损失，建议优先使用 `--install-clr2` 方式。
+
+6. **Spark SQL 支持限制**：
+   - ⚠️ **实验性功能**：Spark SQL 支持未经过实战检验，谨慎使用
+   - 不支持文件系统读写（Spark SQL 无文件操作功能）
+   - 不支持系统命令执行（无 xp_cmdshell 等类似功能）
+   - 不支持密码哈希提取
+   - 不支持权限提升功能
+   - 仅支持基本的数据库枚举和数据提取功能
 
 ## 免责声明
 
