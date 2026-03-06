@@ -19,7 +19,7 @@ from lib.core.enums import OS
 from thirdparty import six
 
 # sqlmap version (<major>.<minor>.<month>.<monthly commit>)
-VERSION = "1.9.1.2"
+VERSION = "1.0.0"
 TYPE = "dev" if VERSION.count('.') > 2 and VERSION.split('.')[-1] != '0' else "stable"
 TYPE_COLORS = {"dev": 33, "stable": 90, "pip": 34}
 VERSION_STRING = "sqlmap/%s#%s" % ('.'.join(VERSION.split('.')[:-1]) if VERSION.count('.') > 2 and VERSION.split('.')[-1] == '0' else VERSION, TYPE)
@@ -33,6 +33,8 @@ GIT_PAGE = "https://github.com/sqlmapproject/sqlmap"
 WIKI_PAGE = "https://github.com/sqlmapproject/sqlmap/wiki/"
 ZIPBALL_PAGE = "https://github.com/sqlmapproject/sqlmap/zipball/master"
 
+
+
 # colorful banner
 BANNER = """\033[01;33m\
         ___
@@ -41,6 +43,21 @@ BANNER = """\033[01;33m\
 |_ -| . [.]     | .'| . |
 |___|_  [.]_|_|_|__,|  _|
       |_|V...       |_|   \033[0m\033[4;37m%s\033[0m\n
+""" % (TYPE_COLORS.get(TYPE, 31), VERSION_STRING.split('/')[-1], SITE)
+
+
+
+
+# colorful banner
+BANNER = """\033[01;36m\
+__                      ___ ___  _______ __             ___ ___        ________     
+  .-----.-----|  .--------.---.-.-----(   Y   )|   _   |  .--.--.-----|   Y   .|---.-.--.--.  \033[01;37m{\033[01;%dm%s\033[01;37m}\033[01;33m
+  |__ --|  _  |  |        |  _  |  _  |\\  1  / |.  1   |  |  |  |__ --|.      |  _  |_   _| 
+  |_____|__   |__|__|__|__|___._|   __|/  _  \\ |.  ____|__|_____|_____|. \\_/  |___._|__.__| 
+           |__|                 |__|  /:  |   \\|:  |                  |:  |   |            
+                                     (::. |:.  |::.|                  |::.|:. |            
+                                      `--- ---'`---'                  `--- ---'            \033[0m\033[4;37m%s\033[0m\n
+
 """ % (TYPE_COLORS.get(TYPE, 31), VERSION_STRING.split('/')[-1], SITE)
 
 # Minimum distance of ratio from kb.matchRatio to result in True
